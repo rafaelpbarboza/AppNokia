@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">AppNokia</string>
+    <string name="user_login">User Name</string>
+    <string name="password_login">Password</string>
+    <string name="login">Login</string>
+    <string name="site">Sitio</string>
+    <string name="totalActivities">total Activities: </string>
+    <string name="status">Status: </string>
+</resources>
