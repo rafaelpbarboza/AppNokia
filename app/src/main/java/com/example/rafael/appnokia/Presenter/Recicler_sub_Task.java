@@ -6,17 +6,17 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.example.rafael.appnokia.Model.Task;
+import com.example.rafael.appnokia.Model.Pojo_Task;
 import com.example.rafael.appnokia.R;
 
 import java.util.ArrayList;
 
 public class Recicler_sub_Task  extends RecyclerView.Adapter<Recicler_sub_Task.Holder>{
 
-    ArrayList<Task>tasks;
+    ArrayList<Pojo_Task> pojoTasks;
 
-    public Recicler_sub_Task(ArrayList<Task> tasks){
-        this.tasks=tasks;
+    public Recicler_sub_Task(ArrayList<Pojo_Task> pojoTasks){
+        this.pojoTasks = pojoTasks;
     }
     @NonNull
     @Override
@@ -28,14 +28,14 @@ public class Recicler_sub_Task  extends RecyclerView.Adapter<Recicler_sub_Task.H
 
     @Override
     public void onBindViewHolder(@NonNull Holder holder, int position) {
-        Task task=tasks.get(position);
+        Pojo_Task pojoTask = pojoTasks.get(position);
 
 
     }
 
     @Override
     public int getItemCount() {
-        return tasks.size();
+        return pojoTasks.size();
     }
 
     public static class Holder extends ReciclerOrder.ViewHolder{
