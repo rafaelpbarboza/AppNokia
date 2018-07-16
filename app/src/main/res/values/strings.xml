@@ -8,4 +8,12 @@
     <string name="status">Status: </string>
     <string name="tab_new_order">NEW WORK ORDERS</string>
     <string name="tab_progress">IN PROGRESS</string>
+    <string name="bonton_task_to_be">Finish</string>
+    <string name="activivty">activity:</string>
+    <string name="day_working">Day Working On:</string>
+    <string name="date">Date Started:</string>
+    <string name="wo_orders">Wo Orders</string>
+    <string name="my_sites">My Sites</string>
+    <string name="documentacion">Documentacion</string>
+    <string name="chat">Chat</string>
 </resources>
