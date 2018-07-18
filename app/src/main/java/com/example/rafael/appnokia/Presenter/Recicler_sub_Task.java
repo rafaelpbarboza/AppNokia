@@ -30,7 +30,6 @@ public class Recicler_sub_Task  extends RecyclerView.Adapter<Recicler_sub_Task.H
     public void onBindViewHolder(@NonNull Holder holder, int position) {
         Task task=tasks.get(position);
 
-
     }
 
     @Override
