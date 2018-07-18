@@ -1,18 +1,42 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
+    android:weightSum="10"
     tools:context=".View.Order">
 
     <android.support.design.widget.TabLayout
+        android:id="@+id/tab_order"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/tab_order"/>
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+         />
 
     <android.support.v4.view.ViewPager
+        android:id="@+id/view_Pager_order"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@+id/navigation"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tab_order" />
+
+
+    <android.support.design.widget.BottomNavigationView
+        android:id="@+id/navigation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="start"
+        app:menu="@menu/menu"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        />
         android:layout_width="match_parent"
         android:layout_height="fill_parent"
         android:id="@+id/view_Pager_order">
@@ -21,8 +45,4 @@
             android:id="@+id/button_bar" />
     </android.support.v4.view.ViewPager>
 
-
-
-
-
-</LinearLayout>
+</android.support.constraint.ConstraintLayout>
