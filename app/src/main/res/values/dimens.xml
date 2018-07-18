@@ -6,4 +6,9 @@
     <!-- Per the design guidelines, navigation drawers should be between 240dp and 320dp:
          https://developer.android.com/design/patterns/navigation-drawer.html -->
     <dimen name="navigation_drawer_width">240dp</dimen>
+    <dimen name="elevation_toolbar">4dp</dimen>
+    <dimen name="subtitle_task">20dp</dimen>
+    <dimen name="body_task">16dp</dimen>
+    <dimen name="title_task">24dp</dimen>
+    <dimen name="card_margin">12dp</dimen>
 </resources>
