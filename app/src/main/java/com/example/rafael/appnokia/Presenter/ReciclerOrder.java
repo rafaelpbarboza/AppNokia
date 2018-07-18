@@ -51,7 +51,7 @@ public class ReciclerOrder extends RecyclerView.Adapter<ReciclerOrder.ViewHolder
             public void onClick(View view) {
                 Intent i=new Intent(context, Sub_Task.class);
                 i.putExtra("sub_task", pojoTask.getPojoSub_tasks());
-                //Toast.makeText(context,pojoTask.getPojoSub_tasks().get(1).getTitle() , Toast.LENGTH_SHORT).show();
+                i.putExtra("titulo",pojoTask.getSite());
                 context.startActivity(i);
             }
         });

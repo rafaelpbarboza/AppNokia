@@ -7,6 +7,7 @@
     android:orientation="vertical"
     tools:context=".View.Sub_Task">
 
+    <include layout="@layout/toolbar" android:id="@+id/toolbar_sub_task"/>
     <android.support.v7.widget.RecyclerView
         android:layout_width="match_parent"
         android:layout_height="match_parent"

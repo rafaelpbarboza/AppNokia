@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
 
@@ -21,13 +22,15 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/site"/>
+                    android:text="@string/site"
+                    android:textSize="@dimen/subtitle_task"/>
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Blog 123"
-                    android:id="@+id/site_work"/>
+                    android:id="@+id/site_work"
+                    android:textSize="@dimen/subtitle_task"/>
 
             </LinearLayout>
             <LinearLayout
@@ -38,13 +41,15 @@
                 <ImageButton
                     android:layout_width="25dp"
                     android:layout_height="31dp"
-                    android:src="@drawable/point" />
+                    android:src="@drawable/point"/>
 
                 <TextView
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_height="match_parent"
                     android:text="Calle 16 -A #43"
-                    android:id="@+id/address_work"/>
+                    android:id="@+id/address_work"
+                    android:textSize="@dimen/body_task"
+                    android:layout_gravity="bottom"/>
 
             </LinearLayout>
             <LinearLayout
@@ -55,12 +60,14 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/totalActivities" />
+                    android:text="@string/totalActivities"
+                    android:textSize="@dimen/body_task"/>
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="3"
-                    android:id="@+id/activities_work"/>
+                    android:id="@+id/activities_work"
+                    android:textSize="@dimen/body_task"/>
             </LinearLayout>
             <LinearLayout
                 android:layout_width="wrap_content"
@@ -69,20 +76,21 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/status"
-                />
+                android:textSize="@dimen/body_task"/>
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="0%"
-                android:id="@+id/status_work"/>
+                android:id="@+id/status_work"
+                android:textSize="@dimen/body_task"/>
             </LinearLayout>
 
             <ProgressBar
                 android:id="@+id/progressBar"
                 style="@style/Base.Widget.AppCompat.ProgressBar.Horizontal"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:progress="6"/>
+                android:layout_height="30dp"
+                android:progress="6" />
 
         </LinearLayout>
 
