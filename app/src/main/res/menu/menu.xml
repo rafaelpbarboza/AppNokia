@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+        <item android:id="@+id/action_search"
+            android:title="@string/wo_orders"
+            android:icon="@drawable/point" />
+        <item android:id="@+id/action_settings"
+            android:title="@string/my_sites"
+            android:icon="@drawable/point" />
+        <item android:id="@+id/action_navigation"
+            android:title="@string/documentacion"
+            android:icon="@drawable/point" />
+        <item android:id="@+id/chat"
+            android:title="@string/chat"
+            android:icon="@drawable/point" />
+</menu>

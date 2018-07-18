@@ -1,8 +1,8 @@
 package com.example.rafael.appnokia.Presenter;
 
-import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
+import android.os.Parcelable;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
@@ -11,19 +11,22 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 import android.widget.Toast;
-import com.example.rafael.appnokia.Model.Task;
+
+import com.example.rafael.appnokia.Model.Pojo_Sub_Task;
+import com.example.rafael.appnokia.Model.Pojo_Task;
 import com.example.rafael.appnokia.R;
 import com.example.rafael.appnokia.View.Sub_Task;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
 public class ReciclerOrder extends RecyclerView.Adapter<ReciclerOrder.ViewHolder> {
-    private ArrayList<Task> tasks;
+    private ArrayList<Pojo_Task> pojoTasks;
     private Context context;
-    private Task task;
+    private Pojo_Task pojoTask;
 
-    public ReciclerOrder(ArrayList<Task>tasks,Context contexts) {
-        this.tasks=tasks;
+    public ReciclerOrder(ArrayList<Pojo_Task> pojoTasks, Context contexts) {
+        this.pojoTasks = pojoTasks;
         this.context=contexts;
     }
 
@@ -38,16 +41,17 @@ public class ReciclerOrder extends RecyclerView.Adapter<ReciclerOrder.ViewHolder
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        task=tasks.get(position);
-        holder.site.setText(task.getSite());
-        holder.address.setText(task.getAddress());
-        holder.activities.setText(String.valueOf(task.getActivities()));
-        holder.status.setText(String.valueOf(task.getStatus()));
+        pojoTask = pojoTasks.get(position);
+        holder.site.setText(pojoTask.getSite());
+        holder.address.setText(pojoTask.getAddress());
+        holder.activities.setText(String.valueOf(pojoTask.getActivities()));
+        holder.status.setText(String.valueOf(pojoTask.getStatus()));
         holder.card.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent i=new Intent(context, Sub_Task.class);
-                i.putExtra("sub_task",task.getSub_tasks());
+                i.putExtra("sub_task", pojoTask.getPojoSub_tasks());
+                //Toast.makeText(context,pojoTask.getPojoSub_tasks().get(1).getTitle() , Toast.LENGTH_SHORT).show();
                 context.startActivity(i);
             }
         });
@@ -55,7 +59,7 @@ public class ReciclerOrder extends RecyclerView.Adapter<ReciclerOrder.ViewHolder
 
     @Override
     public int getItemCount() {
-        return tasks.size();
+        return pojoTasks.size();
     }
 
     public static class ViewHolder extends RecyclerView.ViewHolder {

@@ -6,12 +6,7 @@ import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
-import android.widget.LinearLayout;
 
-import com.example.rafael.appnokia.Model.Task;
-import com.example.rafael.appnokia.Presenter.ReciclerOrder;
 import com.example.rafael.appnokia.Presenter.View_Pager_Adapter_Order;
 import com.example.rafael.appnokia.R;
 import com.example.rafael.appnokia.View.Fragment.Fragment_New_Orden;
