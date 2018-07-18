@@ -15,7 +15,7 @@ import com.example.rafael.appnokia.Model.Pojo_Sub_Task;
 import com.example.rafael.appnokia.Model.Pojo_Task;
 import com.example.rafael.appnokia.R;
 import com.example.rafael.appnokia.View.Task_to_be;
-//import com.squareup.picasso.Picasso;
+import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 
@@ -42,7 +42,7 @@ public class Recicler_sub_Task  extends RecyclerView.Adapter<Recicler_sub_Task.H
     public void onBindViewHolder(@NonNull Holder holder, int position) {
         sub_task=pojo_sub_tasks.get(position);
         holder.title.setText(sub_task.getTitle());
-        //Picasso.get().load(sub_task.getImage()).into(holder.icon);
+        Picasso.get().load(sub_task.getImage()).into(holder.icon);
         holder.text.setText(String.valueOf(sub_task.getProgress()));
         holder.linearLayout.setOnClickListener(new View.OnClickListener() {
             @Override
