@@ -1,4 +1,5 @@
 package com.example.rafael.appnokia.View;
+import android.content.SharedPreferences;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
 import android.support.design.widget.TabLayout;
@@ -22,6 +23,8 @@ import com.example.rafael.appnokia.View.Fragment.Fragment_New_Orden;
 import com.example.rafael.appnokia.View.Fragment.Fragment_Progress_Order;
 
 import java.util.ArrayList;
+
+import smartdevelop.ir.eram.showcaseviewlib.GuideView;
 
 public class Order extends AppCompatActivity implements BottomNavigationView.OnNavigationItemSelectedListener {
     private Toolbar toolbar;
@@ -49,6 +52,31 @@ public class Order extends AppCompatActivity implements BottomNavigationView.OnN
         tabLayout.getTabAt(0).setText(R.string.tab_new_order);
         tabLayout.getTabAt(1).setText(R.string.tab_progress);
         navigation.setOnNavigationItemSelectedListener(this);
+
+        new GuideView.Builder(this)
+                .setTitle("Tab de Navegacion")
+                .setContentText("Deslice entre tab \n para ver el estado de las ordenes")
+                .setGravity(GuideView.Gravity.auto) //optional
+                .setDismissType(GuideView.DismissType.outside) //optional - default GuideView.DismissType.targetView
+                .setTargetView(tabLayout)
+                .setContentTextSize(12)//optional
+                .setTitleTextSize(14)//optional
+                .setGuideListener(new GuideView.GuideListener() {
+                    @Override
+                    public void onDismiss(View view) {
+
+                    }
+                })
+                .build()
+                .show();
+
+
+        SharedPreferences sharedPref =getSharedPreferences("tutorial",MODE_PRIVATE);
+        SharedPreferences.Editor editor = sharedPref.edit();
+        editor.putInt("estado_navegacion", 1);
+        editor.apply();
+        editor.commit();
+
     }
 
 
@@ -56,20 +84,33 @@ public class Order extends AppCompatActivity implements BottomNavigationView.OnN
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
         FragmentManager fragmentManager = getSupportFragmentManager();
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+
+        new GuideView.Builder(this)
+                .setTitle("Boton de navegacion")
+                .setContentText("Navegue el menu para pasar opciones del menu")
+                .setGravity(GuideView.Gravity.auto) //optional
+                .setDismissType(GuideView.DismissType.outside) //optional - default GuideView.DismissType.targetView
+                .setTargetView(navigation)
+                .setContentTextSize(12)//optional
+                .setTitleTextSize(14)//optional
+                .build()
+                .show();
+
         switch (item.getItemId()) {
             case R.id.wo_orders:
-                fragmentTransaction.add(R.id.fragment_container, new Fragment_Progress_Order(), "Fragment Menu");
 
+                //fragmentTransaction.add(R.id.fragment_container, new Fragment_Progress_Order(), "Fragment Menu");
                 // Add the fragment in back stack.
                 //fragmentTransaction.addToBackStack(null);
 
                 // Commit.
-                fragmentTransaction.commit();
+                //fragmentTransaction.commit();
                 return true;
 
             default:
-                return super.onOptionsItemSelected(item);
+                //return super.onOptionsItemSelected(item);
         }
+        return true;
 
     }
 }

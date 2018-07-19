@@ -8,6 +8,13 @@
     tools:context=".View.Sub_Task">
 
     <include layout="@layout/toolbar" android:id="@+id/toolbar_sub_task"/>
+    <ProgressBar
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        style="@style/Base.Widget.AppCompat.ProgressBar.Horizontal"
+        android:layout_margin="@dimen/activity_horizontal_margin"
+        android:progress="24"
+        />
     <android.support.v7.widget.RecyclerView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
