@@ -1,9 +1,8 @@
 package com.example.rafael.appnokia.View;
-
-
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
 import android.support.design.widget.TabLayout;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
@@ -16,7 +15,7 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Toast;
-
+import android.support.v4.app.FragmentManager;
 import com.example.rafael.appnokia.Presenter.View_Pager_Adapter_Order;
 import com.example.rafael.appnokia.R;
 import com.example.rafael.appnokia.View.Fragment.Fragment_New_Orden;
@@ -55,9 +54,17 @@ public class Order extends AppCompatActivity implements BottomNavigationView.OnN
 
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+        FragmentManager fragmentManager = getSupportFragmentManager();
+        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
         switch (item.getItemId()) {
             case R.id.wo_orders:
+                fragmentTransaction.add(R.id.fragment_container, new Fragment_Progress_Order(), "Fragment Menu");
 
+                // Add the fragment in back stack.
+                //fragmentTransaction.addToBackStack(null);
+
+                // Commit.
+                fragmentTransaction.commit();
                 return true;
 
             default:
