@@ -8,6 +8,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import com.example.rafael.appnokia.Model.Pojo_Sub_Task;
 import com.example.rafael.appnokia.Model.Pojo_Task;
@@ -16,6 +17,8 @@ import com.example.rafael.appnokia.Presenter.ReciclerOrder;
 import com.example.rafael.appnokia.R;
 
 import java.util.ArrayList;
+
+import smartdevelop.ir.eram.showcaseviewlib.GuideView;
 
 public class Fragment_New_Orden extends Fragment{
     private RecyclerView recyclerView;
@@ -28,6 +31,7 @@ public class Fragment_New_Orden extends Fragment{
         ln.setOrientation(LinearLayoutManager.VERTICAL);
         recyclerView.setLayoutManager(ln);
         recyclerView.setAdapter(new ReciclerOrder(date(),getContext()));
+
         return v;
     }
 

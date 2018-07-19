@@ -5,11 +5,11 @@
             android:icon="@drawable/tools_medium" />
         <item android:id="@+id/action_sites"
             android:title="@string/my_sites"
-            android:icon="@drawable/point" />
+            android:icon="@drawable/home" />
         <item android:id="@+id/action_documentacion"
             android:title="@string/documentacion"
-            android:icon="@drawable/point" />
+            android:icon="@drawable/bookmark_" />
         <item android:id="@+id/chat"
             android:title="@string/chat"
-            android:icon="@drawable/point" />
+            android:icon="@drawable/user" />
 </menu>

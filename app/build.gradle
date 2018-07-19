@@ -29,6 +29,7 @@ dependencies {
     implementation 'com.android.support:recyclerview-v7:27.1.1'
     implementation 'com.android.support:design:27.1.1'
     implementation 'com.squareup.picasso:picasso:2.71828'
+    implementation 'com.github.mreram:ShowCaseView:1.0.5'
 
 
 }
