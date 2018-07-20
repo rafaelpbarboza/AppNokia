@@ -31,6 +31,8 @@ public class Order extends AppCompatActivity implements BottomNavigationView.OnN
     private ViewPager pager;
     private TabLayout tabLayout;
     private BottomNavigationView navigation;
+    private SharedPreferences.Editor editor;
+    private SharedPreferences sharedPref;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -53,29 +55,9 @@ public class Order extends AppCompatActivity implements BottomNavigationView.OnN
         tabLayout.getTabAt(1).setText(R.string.tab_progress);
         navigation.setOnNavigationItemSelectedListener(this);
 
-        new GuideView.Builder(this)
-                .setTitle("Tab de Navegacion")
-                .setContentText("Deslice entre tab \n para ver el estado de las ordenes")
-                .setGravity(GuideView.Gravity.auto) //optional
-                .setDismissType(GuideView.DismissType.outside) //optional - default GuideView.DismissType.targetView
-                .setTargetView(tabLayout)
-                .setContentTextSize(12)//optional
-                .setTitleTextSize(14)//optional
-                .setGuideListener(new GuideView.GuideListener() {
-                    @Override
-                    public void onDismiss(View view) {
+        sharedPref =getSharedPreferences("tutorial",MODE_PRIVATE);
+        editor = sharedPref.edit();
 
-                    }
-                })
-                .build()
-                .show();
-
-
-        SharedPreferences sharedPref =getSharedPreferences("tutorial",MODE_PRIVATE);
-        SharedPreferences.Editor editor = sharedPref.edit();
-        editor.putInt("estado_navegacion", 1);
-        editor.apply();
-        editor.commit();
 
     }
 
@@ -85,17 +67,25 @@ public class Order extends AppCompatActivity implements BottomNavigationView.OnN
         FragmentManager fragmentManager = getSupportFragmentManager();
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
 
-        new GuideView.Builder(this)
-                .setTitle("Boton de navegacion")
-                .setContentText("Navegue el menu para pasar opciones del menu")
-                .setGravity(GuideView.Gravity.auto) //optional
-                .setDismissType(GuideView.DismissType.outside) //optional - default GuideView.DismissType.targetView
-                .setTargetView(navigation)
-                .setContentTextSize(12)//optional
-                .setTitleTextSize(14)//optional
-                .build()
-                .show();
-
+        if(sharedPref.getInt("estado_button_bar",0) == 0) {
+            new GuideView.Builder(this)
+                    .setTitle("Boton de navegacion")
+                    .setContentText("Navegue el menu para pasar opciones del menu")
+                    .setGravity(GuideView.Gravity.auto) //optional
+                    .setDismissType(GuideView.DismissType.outside) //optional - default GuideView.DismissType.targetView
+                    .setTargetView(navigation)
+                    .setContentTextSize(12)//optional
+                    .setTitleTextSize(14)//optional
+                    .setGuideListener(new GuideView.GuideListener() {
+                        @Override
+                        public void onDismiss(View view) {
+                            editor.putInt("estado_button_bar", 1);
+                            editor.commit();
+                        }
+                    })
+                    .build()
+                    .show();
+        }
         switch (item.getItemId()) {
             case R.id.wo_orders:
 

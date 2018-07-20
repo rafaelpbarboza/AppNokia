@@ -2,6 +2,7 @@ package com.example.rafael.appnokia.Presenter;
 
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -19,11 +20,15 @@ import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 
+import smartdevelop.ir.eram.showcaseviewlib.GuideView;
+
 public class Recicler_sub_Task  extends RecyclerView.Adapter<Recicler_sub_Task.Holder>{
 
     private ArrayList<Pojo_Sub_Task> pojo_sub_tasks;
     private Pojo_Sub_Task sub_task;
     private Context context;
+    private SharedPreferences.Editor editor;
+    private SharedPreferences sharedPref;
 
     public Recicler_sub_Task(ArrayList<Pojo_Sub_Task> pojoTasks, Context context){
         this.pojo_sub_tasks = pojoTasks;
@@ -41,6 +46,32 @@ public class Recicler_sub_Task  extends RecyclerView.Adapter<Recicler_sub_Task.H
     @Override
     public void onBindViewHolder(@NonNull Holder holder, int position) {
         sub_task=pojo_sub_tasks.get(position);
+
+
+        if(holder.getAdapterPosition()==0){
+            sharedPref =context.getSharedPreferences("tutorial",context.MODE_PRIVATE);
+            editor = sharedPref.edit();
+            if(sharedPref.getInt("estado_sub_actividad",0) == 0) {
+                new GuideView.Builder(context)
+                        .setTitle("Sub Actividad por realizar")
+                        .setContentText("Deslice entre tab \n para ver el estado de las ordenes")
+                        .setGravity(GuideView.Gravity.auto) //optional
+                        .setDismissType(GuideView.DismissType.outside) //optional - default GuideView.DismissType.targetView
+                        .setTargetView(holder.linearLayout)
+                        .setContentTextSize(12)//optional
+                        .setTitleTextSize(14)//optional
+                        .setGuideListener(new GuideView.GuideListener() {
+                            @Override
+                            public void onDismiss(View view) {
+                                editor.putInt("estado_sub_actividad", 1);
+                                editor.commit();
+                            }
+                        })
+                        .build()
+                        .show();
+            }
+        }
+
         holder.title.setText(sub_task.getTitle());
         Picasso.get().load(sub_task.getImage()).into(holder.icon);
         holder.text.setText(String.valueOf(sub_task.getProgress()));
