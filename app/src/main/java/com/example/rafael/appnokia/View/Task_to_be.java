@@ -5,6 +5,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.Toolbar;
 import android.widget.Toast;
 
 import com.example.rafael.appnokia.Model.Pojo_Task_to_be;
@@ -15,7 +16,7 @@ import java.util.ArrayList;
 
 public class Task_to_be extends AppCompatActivity {
     private RecyclerView recyclerView;
-
+    private Toolbar toolbar;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

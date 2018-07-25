@@ -46,6 +46,7 @@ public class Order extends AppCompatActivity implements BottomNavigationView.OnN
             toolbar.setTitle(R.string.wo_orders);
         }
         setSupportActionBar(toolbar);
+
         ArrayList<Fragment>fragments=new ArrayList();
         fragments.add(new Fragment_New_Orden());
         fragments.add(new Fragment_Progress_Order());

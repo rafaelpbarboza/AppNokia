@@ -31,6 +31,7 @@ public class Sub_Task extends AppCompatActivity {
             toolbar=(Toolbar)findViewById(R.id.toolbar_sub_task);
             setSupportActionBar(toolbar);
             toolbar.setTitle(R.string.status);
+            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         }
 
         recyclerView=(RecyclerView) findViewById(R.id.Recicler_sub_task);

@@ -19,8 +19,8 @@
             </intent-filter>
         </activity>
         <activity android:name=".View.Order" />
-        <activity android:name=".View.Sub_Task" />
-        <activity android:name=".View.Task_to_be"></activity>
+        <activity android:name=".View.Sub_Task" android:parentActivityName=".View.Order"/>
+        <activity android:name=".View.Task_to_be" android:parentActivityName=".View.Sub_Task"/>
     </application>
 
 </manifest>
