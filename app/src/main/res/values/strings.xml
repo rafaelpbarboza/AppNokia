@@ -18,5 +18,8 @@
     <string name="chat">Chat</string>
     <string name="total_new">Total new</string>
     <string name="percentage">%</string>
+    <string name="Wo_sub_task">Wo:</string>
+    <string name="date_sub_task">date:</string>
+    <string name="total_sub_task">total:</string>
 
 </resources>

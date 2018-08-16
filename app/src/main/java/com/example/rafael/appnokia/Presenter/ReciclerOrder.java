@@ -49,7 +49,7 @@ public class ReciclerOrder extends RecyclerView.Adapter<ReciclerOrder.ViewHolder
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         pojoTask = pojoTasks.get(position);
-
+/*
         if(holder.getAdapterPosition()==0){
             sharedPref =context.getSharedPreferences("tutorial",context.MODE_PRIVATE);
             editor = sharedPref.edit();
@@ -72,7 +72,7 @@ public class ReciclerOrder extends RecyclerView.Adapter<ReciclerOrder.ViewHolder
                         .build()
                         .show();
             }
-        }
+        }*/
         holder.site.setText(pojoTask.getSite());
         holder.address.setText(pojoTask.getAddress());
         holder.activities.setText(String.valueOf(pojoTask.getActivities()));
@@ -83,6 +83,7 @@ public class ReciclerOrder extends RecyclerView.Adapter<ReciclerOrder.ViewHolder
                 Intent i=new Intent(context, Sub_Task.class);
                 i.putExtra("sub_task", pojoTask.getPojoSub_tasks());
                 i.putExtra("titulo",pojoTask.getSite());
+                i.putExtra("size",pojoTasks.size());
                 context.startActivity(i);
             }
         });

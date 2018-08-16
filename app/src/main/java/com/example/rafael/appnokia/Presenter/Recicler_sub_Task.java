@@ -47,7 +47,7 @@ public class Recicler_sub_Task  extends RecyclerView.Adapter<Recicler_sub_Task.H
     public void onBindViewHolder(@NonNull Holder holder, int position) {
         sub_task=pojo_sub_tasks.get(position);
 
-
+        /*
         if(holder.getAdapterPosition()==0){
             sharedPref =context.getSharedPreferences("tutorial",context.MODE_PRIVATE);
             editor = sharedPref.edit();
@@ -70,7 +70,7 @@ public class Recicler_sub_Task  extends RecyclerView.Adapter<Recicler_sub_Task.H
                         .build()
                         .show();
             }
-        }
+        }*/
 
         holder.title.setText(sub_task.getTitle());
         Picasso.get().load(sub_task.getImage()).into(holder.icon);

@@ -90,7 +90,8 @@
                 style="@style/Base.Widget.AppCompat.ProgressBar.Horizontal"
                 android:layout_width="match_parent"
                 android:layout_height="30dp"
-                android:progress="6" />
+                android:progress="6"
+                android:scaleY="6"/>
 
         </LinearLayout>
 

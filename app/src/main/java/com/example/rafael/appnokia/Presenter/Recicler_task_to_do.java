@@ -42,7 +42,7 @@ public class Recicler_task_to_do extends RecyclerView.Adapter<Recicler_task_to_d
     @Override
     public void onBindViewHolder(@NonNull holder holder, int position) {
         pojo=pojo_task_to_bes.get(position);
-
+/*
         if(holder.getAdapterPosition()==0){
             sharedPref =context.getSharedPreferences("tutorial",context.MODE_PRIVATE);
             editor = sharedPref.edit();
@@ -65,7 +65,7 @@ public class Recicler_task_to_do extends RecyclerView.Adapter<Recicler_task_to_d
                         .build()
                         .show();
             }
-        }
+        }*/
         holder.name.setText(pojo.getName());
         holder.status.setText(pojo.getStatus());
         holder.day.setText(String.valueOf(pojo.getDay_working()));

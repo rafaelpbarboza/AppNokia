@@ -46,7 +46,9 @@
             android:id="@+id/progress_sub_task"
             android:layout_gravity="center"
             android:minHeight="50dp"
-            android:progress="20"/>
+            android:progress="20"
+            android:scaleY="6"
+            android:layout_margin="12dp"/>
     </LinearLayout>
 
 </android.support.v7.widget.CardView>
