@@ -1,11 +1,16 @@
 package com.example.rafael.appnokia.View;
 import android.content.SharedPreferences;
+import android.content.res.Configuration;
+import android.os.PersistableBundle;
 import android.support.annotation.NonNull;
+import android.support.annotation.Nullable;
 import android.support.design.widget.BottomNavigationView;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
+import android.support.v4.widget.DrawerLayout;
+import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.ButtonBarLayout;
@@ -15,6 +20,8 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ListView;
 import android.widget.Toast;
 import android.support.v4.app.FragmentManager;
 import com.example.rafael.appnokia.Presenter.View_Pager_Adapter_Order;
@@ -34,6 +41,12 @@ public class Order extends AppCompatActivity implements BottomNavigationView.OnN
     private SharedPreferences.Editor editor;
     private SharedPreferences sharedPref;
 
+
+
+    private DrawerLayout mDrawerLayout;
+    private ActionBarDrawerToggle mDrawerToggle;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -45,6 +58,7 @@ public class Order extends AppCompatActivity implements BottomNavigationView.OnN
             toolbar=(Toolbar)findViewById(R.id.toolbar_task);
             toolbar.setTitle(R.string.wo_orders);
         }
+
         setSupportActionBar(toolbar);
 
         ArrayList<Fragment>fragments=new ArrayList();
@@ -62,6 +76,17 @@ public class Order extends AppCompatActivity implements BottomNavigationView.OnN
 
     }
 
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        // Pass the event to ActionBarDrawerToggle, if it returns
+        // true, then it has handled the app icon touch event
+        if (mDrawerToggle.onOptionsItemSelected(item)) {
+            return true;
+        }
+        // Handle your other action bar items...
+
+        return super.onOptionsItemSelected(item);
+    }
 
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {

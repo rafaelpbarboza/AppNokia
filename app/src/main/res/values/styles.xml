@@ -8,6 +8,7 @@
         <item name="colorAccent">@color/colorAccent</item>
         <item name="android:textColorPrimary">@color/primary_text_color</item>
         <item name="android:textColorSecondary">@color/segundary_text_color</item>
+
     </style>
 
     <style name="toolbar" parent="Theme.AppCompat.Light.NoActionBar">

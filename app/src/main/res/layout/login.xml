@@ -26,12 +26,14 @@
             android:layout_height="wrap_content"
             android:hint="@string/user_login"
             android:id="@+id/TextUser"
+            android:maxLines="1"
             android:layout_marginBottom="12dp"
             android:layout_marginTop="12dp"/>
         <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="@string/password_login"
+            android:maxLines="1"
             android:id="@+id/TextPassword"
             android:inputType="textPassword"/>
 
