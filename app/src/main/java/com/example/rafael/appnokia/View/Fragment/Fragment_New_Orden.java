@@ -40,22 +40,26 @@ public class Fragment_New_Orden extends Fragment{
         ArrayList<Pojo_Task> pojoTasks =new ArrayList();
 
         ArrayList<Pojo_Sub_Task> pojoSub_tasks =new ArrayList();
+
         ArrayList<Pojo_Task_to_be>pojo_task_to_bes=new ArrayList();
+
         pojo_task_to_bes.add(new Pojo_Task_to_be("Site Clean","No Starter","12/1/18",2,5,12));
         pojo_task_to_bes.add(new Pojo_Task_to_be("Clean","No Starter","12/1/18",4,5,1));
         pojo_task_to_bes.add(new Pojo_Task_to_be("On Air","Starter","11/13/18",3,2,3));
         pojoSub_tasks.add(new Pojo_Sub_Task("Civil works", "https://d30y9cdsu7xlg0.cloudfront.net/png/791013-200.png", 50,pojo_task_to_bes));
         pojoSub_tasks.add(new Pojo_Sub_Task("PSIM","https://png.icons8.com/metro/1600/work.png",50,pojo_task_to_bes));
+        pojoSub_tasks.add(new Pojo_Sub_Task("Lorem Ipsus", "https://d30y9cdsu7xlg0.cloudfront.net/png/791013-200.png", 50,pojo_task_to_bes));
+        pojoSub_tasks.add(new Pojo_Sub_Task("industry","https://png.icons8.com/metro/1600/work.png",50,pojo_task_to_bes));
+        pojoSub_tasks.add(new Pojo_Sub_Task("electronic","https://png.icons8.com/metro/1600/work.png",50,pojo_task_to_bes));
 
-
         pojoTasks.add(new Pojo_Task("Blog123","calle 116 N 34-43",3,12, pojoSub_tasks));
-        pojoTasks.add(new Pojo_Task("Blog123","calle 121 N 56-45",1,0, pojoSub_tasks));
-        pojoTasks.add(new Pojo_Task("Blog123","calle 14 N 44-73",5,0, pojoSub_tasks));
-        pojoTasks.add(new Pojo_Task("Blog123","calle 116 N 34-43",3,12, pojoSub_tasks));
-        pojoTasks.add(new Pojo_Task("Blog123","calle 121 N 56-45",1,0, pojoSub_tasks));
-        pojoTasks.add(new Pojo_Task("Blog123","calle 14 N 44-73",5,0, pojoSub_tasks));
-        pojoTasks.add(new Pojo_Task("Blog123","calle 116 N 34-43",3,12, pojoSub_tasks));
-        pojoTasks.add(new Pojo_Task("Blog123","calle 121 N 56-45",1,0, pojoSub_tasks));
+        pojoTasks.add(new Pojo_Task("Lorem Ipsus","calle 121 N 56-45",1,0, pojoSub_tasks));
+        pojoTasks.add(new Pojo_Task("simply ","calle 14 N 44-73",5,0, pojoSub_tasks));
+        pojoTasks.add(new Pojo_Task("industry's ","calle 116 N 34-43",3,12, pojoSub_tasks));
+        pojoTasks.add(new Pojo_Task("specimen ","calle 121 N 56-45",1,0, pojoSub_tasks));
+        pojoTasks.add(new Pojo_Task("electronic ","calle 14 N 44-73",5,0, pojoSub_tasks));
+        pojoTasks.add(new Pojo_Task("industry","calle 116 N 34-43",3,12, pojoSub_tasks));
+        pojoTasks.add(new Pojo_Task("electronic","calle 121 N 56-45",1,0, pojoSub_tasks));
         pojoTasks.add(new Pojo_Task("Blog123","calle 14 N 44-73",5,0, pojoSub_tasks));
         pojoTasks.add(new Pojo_Task("Blog123","calle 116 N 34-43",3,12, pojoSub_tasks));
         pojoTasks.add(new Pojo_Task("Blog123","calle 121 N 56-45",1,0, pojoSub_tasks));

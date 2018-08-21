@@ -1,15 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:android="http://schemas.android.com/apk/res/android">
+<menu
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
         <item android:id="@+id/wo_orders"
             android:title="@string/wo_orders"
-            android:icon="@drawable/tools_medium" />
+            android:icon="@drawable/ic_busssign"
+            app:showAsAction="ifRoom"/>
         <item android:id="@+id/action_sites"
             android:title="@string/my_sites"
-            android:icon="@drawable/home" />
+            android:icon="@drawable/ic_home"
+            app:showAsAction="ifRoom"/>
         <item android:id="@+id/action_documentacion"
             android:title="@string/documentacion"
-            android:icon="@drawable/bookmark_" />
-        <item android:id="@+id/chat"
-            android:title="@string/chat"
-            android:icon="@drawable/user" />
+            android:icon="@drawable/ic_book_mark" />
 </menu>

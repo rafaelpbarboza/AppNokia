@@ -1,4 +1,5 @@
 package com.example.rafael.appnokia.View;
+
 import android.content.SharedPreferences;
 import android.content.res.Configuration;
 import android.os.PersistableBundle;
@@ -8,6 +9,7 @@ import android.support.design.widget.BottomNavigationView;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v4.app.Fragment;
+import android.support.v4.view.GravityCompat;
 import android.support.v4.view.ViewPager;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
@@ -21,9 +23,11 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.Toast;
 import android.support.v4.app.FragmentManager;
+
 import com.example.rafael.appnokia.Presenter.View_Pager_Adapter_Order;
 import com.example.rafael.appnokia.R;
 import com.example.rafael.appnokia.View.Fragment.Fragment_New_Orden;
@@ -33,14 +37,14 @@ import java.util.ArrayList;
 
 import smartdevelop.ir.eram.showcaseviewlib.GuideView;
 
-public class Order extends AppCompatActivity implements BottomNavigationView.OnNavigationItemSelectedListener {
+public class Order extends AppCompatActivity implements BottomNavigationView.OnNavigationItemSelectedListener, View.OnClickListener {
     private Toolbar toolbar;
     private ViewPager pager;
     private TabLayout tabLayout;
     private BottomNavigationView navigation;
     private SharedPreferences.Editor editor;
     private SharedPreferences sharedPref;
-
+    private ImageView menu_drawable;
 
 
     private DrawerLayout mDrawerLayout;
@@ -51,26 +55,32 @@ public class Order extends AppCompatActivity implements BottomNavigationView.OnN
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_order);
-        pager=(ViewPager) findViewById(R.id.view_Pager_order);
-        tabLayout=(TabLayout)findViewById(R.id.tab_order);
-        navigation=(BottomNavigationView)findViewById(R.id.bottommenu);
-        if(toolbar==null){
-            toolbar=(Toolbar)findViewById(R.id.toolbar_task);
-            toolbar.setTitle(R.string.wo_orders);
+        pager = (ViewPager) findViewById(R.id.view_Pager_order);
+        menu_drawable=(ImageView)findViewById(R.id.menu_drawable);
+        tabLayout = (TabLayout) findViewById(R.id.tab_order);
+       // navigation = (BottomNavigationView) findViewById(R.id.bottommenu);
+
+
+        mDrawerLayout=(DrawerLayout)findViewById(R.id.drawer_layout);
+        menu_drawable.setOnClickListener(this);
+
+        if (toolbar == null) {
+            toolbar = (Toolbar) findViewById(R.id.toolbar_task);
+            toolbar.setTitle("");
         }
 
         setSupportActionBar(toolbar);
 
-        ArrayList<Fragment>fragments=new ArrayList();
+        ArrayList<Fragment> fragments = new ArrayList();
         fragments.add(new Fragment_New_Orden());
         fragments.add(new Fragment_Progress_Order());
-        pager.setAdapter(new View_Pager_Adapter_Order(getSupportFragmentManager(),fragments));
+        pager.setAdapter(new View_Pager_Adapter_Order(getSupportFragmentManager(), fragments));
         tabLayout.setupWithViewPager(pager);
         tabLayout.getTabAt(0).setText(R.string.tab_new_order);
         tabLayout.getTabAt(1).setText(R.string.tab_progress);
-        navigation.setOnNavigationItemSelectedListener(this);
+        //navigation.setOnNavigationItemSelectedListener(this);
 
-        sharedPref =getSharedPreferences("tutorial",MODE_PRIVATE);
+        sharedPref = getSharedPreferences("tutorial", MODE_PRIVATE);
         editor = sharedPref.edit();
 
 
@@ -93,7 +103,7 @@ public class Order extends AppCompatActivity implements BottomNavigationView.OnN
         FragmentManager fragmentManager = getSupportFragmentManager();
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
 
-        if(sharedPref.getInt("estado_button_bar",0) == 0) {
+        if (sharedPref.getInt("estado_button_bar", 0) == 0) {
             new GuideView.Builder(this)
                     .setTitle("Boton de navegacion")
                     .setContentText("Navegue el menu para pasar opciones del menu")
@@ -127,6 +137,16 @@ public class Order extends AppCompatActivity implements BottomNavigationView.OnN
                 //return super.onOptionsItemSelected(item);
         }
         return true;
+
+    }
+
+
+    @Override
+    public void onClick(View view) {
+        if(view.getId()==menu_drawable.getId()){
+            mDrawerLayout.openDrawer(GravityCompat.START);
+
+        }
 
     }
 }

@@ -9,5 +9,36 @@
     android:elevation="@dimen/elevation_toolbar"
     android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
     app:titleTextColor="@color/toolbar_color"
-    app:popupTheme="@style/ThemeOverlay.AppCompat.Light"/>
+    app:popupTheme="@style/ThemeOverlay.AppCompat.Light">
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:id="@+id/menu_drawable"
+            android:src="@drawable/menu" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/wo_orders"
+            android:layout_marginLeft="14dp"
+            android:textColor="@color/toolbar_color"/>
+    </LinearLayout>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginRight="14dp"
+            android:src="@drawable/search" />
+    </RelativeLayout>
+</android.support.v7.widget.Toolbar>
+
 

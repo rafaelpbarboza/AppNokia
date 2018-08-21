@@ -16,6 +16,9 @@
         android:id="@+id/tab_order"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="@color/colorPrimary"
+        app:tabSelectedTextColor="@color/toolbar_color"
+        app:tabIndicatorColor="@color/toolbar_color"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toBottomOf="@id/toolbar_task" />

@@ -11,7 +11,7 @@ android:fitsSystemWindows="true"
 tools:context=".View.Order">
 
 <!-- Layout real de la actividad -->
-<include layout="@layout/drawable_menu" />
+<include layout="@layout/order" />
 
 <!-- Layout del menú lateral (Navigation View) -->
 <android.support.design.widget.NavigationView
@@ -20,7 +20,8 @@ tools:context=".View.Order">
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
     android:layout_gravity="start"
-    app:headerLayout="@layout/toolbar_sub_task"
+    app:headerLayout="@layout/menu_profile_drawable"
+
     app:menu="@menu/menu" />
 
 </android.support.v4.widget.DrawerLayout>
